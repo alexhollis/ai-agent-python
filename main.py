@@ -12,7 +12,7 @@ class ResearchResponse(BaseModel):
     sources: list[str]
     tools_used: list[str]
 
-llm = ChatAnthropic(model="claude-sonnet-4-6")
+llm = ChatAnthropic(model_name="claude-sonnet-4-6", timeout=120, stop=None)
 
 tools = [search_tool, wiki_tool, save_tool]
 agent = create_agent(
